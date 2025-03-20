@@ -62,5 +62,7 @@ io.on("connection", (socket) => {
 
 
 const PORT = 5000;
-server.listen(PORT, () => console.log(`🚀 Socket.io server running on port ${PORT}`));
+server.listen(PORT, '0.0.0.0', () => {
+    console.log(`🚀 Socket.io server running on port ${PORT}`);
+});
 
