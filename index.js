@@ -10,9 +10,12 @@ const server = createServer(app);
 
 export const io = new Server(server, {
     cors: {
-        origin: ["https://chaton-real-time-chat-web-app.vercel.app"], // Set your frontend URL here
-        methods: ["GET", "POST","PUT"], credentials: true,
-    }
+        origin: ["https://chaton-real-time-chat-web-app.vercel.app"],
+        methods: ["GET", "POST"],
+        credentials: true,
+        allowedHeaders: ["Authorization", "Content-Type"],
+    },
+    transports: ["websocket", "polling"], // Ensure WebSockets work properly
 });
 
 
